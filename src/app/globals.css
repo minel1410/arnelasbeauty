@@ -3,3 +3,43 @@
 @tailwind utilities;
 
 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 25px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0a192f;
+    border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #233554;
+    border-radius: 5px;
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #233554;
+}
+
+/* Prilagodite stil tačkica ispod carousel-a */
+.carousel .control-dots .dot  {
+    border-radius: 50%; /* Okrugli oblik */
+    background: transparent;
+    box-shadow: none;
+    width: 15px; /* Širina tačkica */
+    height: 15px; /* Visina tačkica */
+    margin: 0 8px; /* Razmak između tačkica */
+    border: solid 1px black;
+    transition: background 0.3s; /* Glatka promjena */
+}
+
+.carousel .control-dots .dot.selected {
+    background: black; /* Boja aktivne tačkice */
+}
+
+
+
