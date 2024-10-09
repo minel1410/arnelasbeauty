@@ -12,6 +12,7 @@ const Navbar = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+
   const controlNavbar = () => {
     const currentScrollY = window.scrollY;
 
@@ -40,25 +41,101 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed h-24 z-30 bg-white px-4 md:px-8 lg:px-48 text-black flex items-center justify-between top-0 w-full transition-all duration-300 ease-in-out ${
+        className={`fixed h-24 z-30 bg-transparent px-4 lg:px-48 text-black flex items-center justify-between top-0 w-full transition-all duration-300 ease-in-out ${
           show
             ? lastScrollY > 100
-              ? "shadow-xl backdrop-blur-md h-20"
+              ? "shadow-xl backdrop-blur-md bg-transparent h-20"
               : ""
             : "-translate-y-full"
         }`}
       >
-        <div className="w-full justify-between items-center hidden md:flex">
-          <p>Home</p>
-          <p>About</p>
-          <div><Logo></Logo></div>
+        <ul className="w-full justify-between items-center hidden md:flex">
+          <motion.li
+            initial={{ opacity: 0, y: -35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, delay: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            className="group relative text-2xl font-semibold text-white/50 hover:text-white hover:cursor-pointer transition-all"
+          >
+            <Link className="relative" href="#home">
+              Home
+              <span
+                className="
+        block h-0.5 bg-white absolute left-0 bottom-0 
+        w-0 transition-all duration-300 ease-out group-hover:w-full
+      "
+              ></span>
+            </Link>
+          </motion.li>
 
-          <p>TEST</p>
-          <p>TEST</p>
-        </div>
+          <motion.li
+            initial={{ opacity: 0, y: -35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
+            className="group relative text-2xl font-semibold text-white/50 hover:text-white hover:cursor-pointer transition-all"
+          >
+            <Link className="relative" href="#services">
+              Services
+              <span
+                className="
+        block h-0.5 bg-white absolute left-0 bottom-0 
+        w-0 transition-all duration-300 ease-out group-hover:w-full
+      "
+              ></span>
+            </Link>
+          </motion.li>
+
+          <motion.div
+            initial={{ opacity: 0, y: -35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, delay: 0.35 }}
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            <Logo isScrolled={lastScrollY < 100}></Logo>
+          </motion.div>
+
+          < 
+          motion.li
+            initial={{ opacity: 0, y: -35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, delay: 0.2 }}
+          className="group relative text-2xl font-semibold text-white/50 hover:text-white hover:cursor-pointer transition-all">
+            <Link className="relative" href="#pricing">
+              Pricing
+              <span
+                className="
+        block h-0.5 bg-white absolute left-0 bottom-0 
+        w-0 transition-all duration-300 ease-out group-hover:w-full
+      "
+              ></span>
+            </Link>
+          </motion.li>
+          <motion.li
+            initial={{ opacity: 0, y: -35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, delay: 0 }}
+            viewport={{ once: true, amount: 0.1 }} className="group relative text-2xl font-semibold text-white/50 hover:text-white hover:cursor-pointer transition-all">
+            <Link className="relative" href="#contact">
+              Contact
+              <span
+                className="
+        block h-0.5 bg-white absolute left-0 bottom-0 
+        w-0 transition-all duration-300 ease-out group-hover:w-full
+      "
+              ></span>
+            </Link>
+          </motion.li>
+        </ul>
 
         {/* Hamburger Icon for Mobile Navigation */}
-        <Logo></Logo>
+        <motion.div
+            initial={{ opacity: 0, y: -35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, delay: 0 }}
+            viewport={{ once: true, amount: 0.1 }}className="md:hidden">
+          <Logo isScrolled={lastScrollY < 100}></Logo>
+        </motion.div>
         <HamburgerIcon
           active={sidebarActive}
           onclick={() => setSidebarActive(!sidebarActive)}

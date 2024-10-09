@@ -1,5 +1,7 @@
 
 import FeatherIcon from "feather-icons-react";
+import Logo from "./Logo";
+import Link from "next/link";
 
 
 export default function Footer() {
@@ -7,29 +9,50 @@ export default function Footer() {
       <div>
         <div className="px-4 py-10 pt-32 lg:px-44 flex flex-col gap-7 md:flex-row md:items-baseline">
           <div className="w-full flex flex-col gap-4">
-            <h1 className="text-3xl font-bold">About Us</h1>
+            <h1 className="text-3xl font-bold">Über uns</h1>
             <div className="h-1 w-1/4 md:w-1/2 bg-Pink"></div>
             <p className="text-md text-[#a3a3a3]">
-              Blameless Nail Salon has been offering an extensive range of nail
-              services and skin treatments since 1999.
+              Beauty Studio by Arnela ist seit 2015 Ihr Ansprechpartner für ein
+              breites Spektrum an Dienstleistungen in den Bereichen Augenbrauen,
+              Wimpern und Make-up.
             </p>
           </div>
           <div className="w-full flex flex-col gap-4">
             <h1 className="text-3xl font-bold">Working Hours</h1>
             <div className="h-1 w-1/4 md:w-1/2 bg-Pink"></div>
-            <div className="text-[#a3a3a3]">
-              <p>Mon-Fri: 9 am – 6 pm</p>
-              <p>Mon-Fri: 9 am – 6 pm</p>
-              <p>Mon-Fri: 9 am – 6 pm</p>
+            <div className="text-[#a3a3a3] text-md">
+              <p>Mon-Fre: 09:00 – 18:00</p>
+              <p>Sam-Son: 09:00 – 18:00</p>
             </div>
           </div>
           <div className="w-full flex flex-col gap-4">
             <h1 className="text-3xl font-bold">Navigacija</h1>
             <div className="h-1 w-1/4 md:w-1/2 bg-Pink"></div>
-            <div className="text-[#a3a3a3]">
-              <p>Početna</p>
-              <p>Početna</p>
-              <p>Početna</p>
+            <div className="text-[#a3a3a3] text-md flex flex-col">
+              <Link
+                href="#home"
+                className="text-md hover:text-white transition-all"
+              >
+                Home
+              </Link>
+              <Link
+                href="#home"
+                className="text-md hover:text-white transition-all"
+              >
+                Home
+              </Link>
+              <Link
+                href="#home"
+                className="text-md hover:text-white transition-all"
+              >
+                Home
+              </Link>
+              <Link
+                href="#home"
+                className="text-md hover:text-white transition-all"
+              >
+                Home
+              </Link>
             </div>
           </div>
           <div className="w-full flex flex-col gap-4">
@@ -43,7 +66,7 @@ export default function Footer() {
                   className="w-8 h-8 text-Pink"
                 />
                 <p className="text-[#a3a3a3]">
-                  Washington, USA 6036 Richmond hwy., Alexandria, VA, 2230
+                  Ritterstraße 28, 76437 Rastatt, Deutschland
                 </p>
               </div>
               <div className="flex w-full gap-5">
@@ -60,21 +83,28 @@ export default function Footer() {
                   strokeWidth={3}
                   className="w-6 h-6 text-Pink"
                 />
-                <p className="text-[#a3a3a3]">
-                  contact@arnelasbeauty.com
-                </p>
+                <p className="text-[#a3a3a3]">contact@arnelasbeauty.com</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="py-3 w-full bg-[#F6F6F6] flex flex-col items-center gap-2 md:flex-row md:justify-between md:px-4 lg:px-44">
-          <p className="text-4xl font-black">LOGO</p>
-          <p className="text-sm text-[#a3a3a3]">
-            © 2020 All Rights Reserved Privacy Policy
-          </p>
+        <div className="py-5 w-full bg-[#F6F6F6] flex flex-col items-center gap-3 md:flex-row md:justify-between md:px-4 lg:px-44">
+          {/* <p className="text-4xl font-black">LOGO</p> */}
+          <div className="flex flex-col">
+            <p className="text-6xl font-allema text-black">Beauty Studio</p>
+            <div className="flex w-full items-center justify-center gap-4">
+              <p className="text-3xl font-aerotis text-black">by Arnela</p>
+            </div>
+          </div>
+          <p className="text-sm text-[#a3a3a3]">© 2024 All Rights Reserved</p>
           <div className="flex gap-2">
-            <FeatherIcon icon="instagram" className="text-[#A3A3A3] w-5 h-5" />
+            <div>
+              <FeatherIcon
+                icon="instagram"
+                className="text-[#A3A3A3] w-5 h-5 hover:-translate-y-3 hover:text-[#606060] hover:cursor-pointer transition-all"
+              />
+            </div>
             <FeatherIcon icon="facebook" className="text-[#A3A3A3] w-5 h-5" />
             <FeatherIcon icon="linkedin" className="text-[#A3A3A3] w-5 h-5" />
           </div>

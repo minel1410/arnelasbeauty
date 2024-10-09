@@ -44,7 +44,9 @@ module.exports = {
       fontFamily: {
         calibre: ["Calibre", "sans-serif"],
         "sf-mono": ["SFMono", "sans-serif"],
-        "scriptina": ["scriptina"]
+        "scriptina": ["scriptina"],
+        "aerotis" : ["Aerotis"],
+        "allema" : ["Allema"]
       },
     },
   },

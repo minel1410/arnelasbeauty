@@ -67,11 +67,11 @@ const MapComponent = () => {
         <Popup>
           <div>
             <a href={googleMapsLink} target="_blank" rel="noopener noreferrer">
-              Otvori u Google Maps
+              In Google Maps öffnen
             </a>
             <br />
             <a href={appleMapsLink} target="_blank" rel="noopener noreferrer">
-              Otvori u Apple Maps
+              In Apple Maps öffnen
             </a>
           </div>
         </Popup>
@@ -88,12 +88,13 @@ export default function ContactMapSection() {
       </div>
       <div className="bg-[#F4F4F4] w-full md:w-1/2 px-4 md:px-16 py-12 flex flex-col justify-center">
         <div>
-          <h1 className="text-4xl font-medium">Get in Touch</h1>
+          <h1 className="text-4xl font-medium">Kontaktieren Sie uns</h1>
           <div className="w-1/4 h-1 bg-Pink mt-2"></div>
         </div>
         <p className="text-[#a3a3a3] lg:w-2/3 mt-4">
-          Have any questions? Feel free to use the contact form below to get in
-          touch with us. We will answer you as soon as possible!
+          Haben Sie noch Fragen? Nutzen Sie das untenstehende Kontaktformular,
+          um mit uns in Kontakt mit uns aufzunehmen. Wir werden Ihnen so schnell
+          wie möglich antworten!
         </p>
         <div className="w-full lg:w-2/3 mt-10">
           <FormComp />
@@ -107,39 +108,66 @@ const FormComp = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <p>Your name</p>
+        <p>Ihr Name</p>
         <input
-          placeholder="John Doe"
-          className="border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
+          placeholder="Vorname Nachname"
+          type="text"
+          name="text"
+          className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
         />
       </div>
       <div className="flex flex-col gap-1">
-        <p>Your phone number</p>
+        <p>Ihre Telefonnummer</p>
         <input
-          placeholder="John Doe"
-          className="border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
+          placeholder="+112233445566"
+          type="text"
+          name="text"
+          className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
         />
       </div>
       <div className="flex flex-col gap-1">
-        <p>Your email</p>
+        <p>Ihre E-mail</p>
         <input
-          placeholder="John Doe"
-          className="border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
+          placeholder="vorname@beispiel.com"
+          type="text"
+          name="text"
+          className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
         />
       </div>
       <div className="flex flex-col gap-1">
-        <p>Your message</p>
+        <p>Ihre Nachricht</p>
         <textarea
-          placeholder="John Doe"
           rows={5}
           maxLength={500}
-          className="border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4] resize-none"
+          className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4] resize-none"
         />
       </div>
 
-      <button className="px-4 py-2 rounded-3xl bg-Pink w-2/3 mt-4">
-        SEND MESSAGE
-      </button>
+      <a
+        href="#_"
+        class="w-1/2 relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-[#a3a3a3] rounded-full shadow-md group"
+      >
+        <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#a3a3a3] group-hover:translate-x-0 ease">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            ></path>
+          </svg>
+        </span>
+        <span class="absolute flex items-center justify-center w-full h-full text-[#a3a3a3] transition-all duration-300 transform group-hover:translate-x-full ease">
+          Nachricht senden
+        </span>
+        <span class="relative invisible">Nachricht senden</span>
+      </a>
     </div>
   );
 };

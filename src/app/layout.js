@@ -7,6 +7,7 @@ import Pricing from "./components/PricingSection";
 import Reviews from "./components/ReviewsSection";
 import MeetMe from "./components/MeetMe";
 import Services from "./components/Services";
+import Hero from "./components/Hero";
 
 export const metadata = {
   title: "Beauty Studio by Arnela Rastatt",
@@ -18,16 +19,7 @@ const RootLayout = ({ children }) => {
     <html lang="en" className="scroll-smooth">
       <body>
         <Navbar />
-        <div className="flex bg-Navy">
-          <div className="pt-24">{children}</div>
-          <FAB></FAB>
-        </div>
-        <Services/>
-        <MeetMe/>
-        <Reviews/>
-        <Pricing/>
-        <ContactMapSection />
-        <Footer></Footer>
+          <div className="">{children}</div>
       </body>
     </html>
   );
