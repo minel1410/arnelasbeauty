@@ -82,92 +82,166 @@ const MapComponent = () => {
 
 export default function ContactMapSection() {
   return (
-    <div className="w-full flex flex-col md:flex-row">
+    <section id="contact" className="w-full flex flex-col md:flex-row">
       <div className="md:w-1/2 z-0 h-[80vh] md:h-auto">
         <MapComponent />
       </div>
       <div className="bg-[#F4F4F4] w-full md:w-1/2 px-4 md:px-16 py-12 flex flex-col justify-center">
         <div>
-          <h1 className="text-4xl font-medium">Kontaktieren Sie uns</h1>
+          <h1 className="text-4xl font-medium poppins-bold">Kontaktieren Sie uns</h1>
           <div className="w-1/4 h-1 bg-Pink mt-2"></div>
         </div>
-        <p className="text-[#a3a3a3] lg:w-2/3 mt-4">
+        <p className="text-[#a3a3a3] lg:w-2/3 mt-4 poppins-medium">
           Haben Sie noch Fragen? Nutzen Sie das untenstehende Kontaktformular,
           um mit uns in Kontakt mit uns aufzunehmen. Wir werden Ihnen so schnell
           wie möglich antworten!
         </p>
         <div className="w-full lg:w-2/3 mt-10">
-          <FormComp />
+          <ContactForm />
         </div>
       </div>
+    </section>
+  );
+}
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: '',
+  });
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+    setErrorMessage('');  // Resetuj poruku greške pri unosu
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Simple validation
+    if (!formData.name || !formData.phone || !formData.email || !formData.message) {
+      setErrorMessage('Sva polja su obavezna.');
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSuccessMessage('Nachricht wurde erfolgreich gesendet!');
+        setFormData({ name: '', phone: '', email: '', message: '' });  // Resetuj formu
+        setErrorMessage('');  // Ukloni eventualne greške
+      } else {
+        setErrorMessage('Fehler beim Senden der Nachricht.');
+        setSuccessMessage('');  // Ukloni poruku uspjeha
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setErrorMessage('Fehler beim Senden der Nachricht.');
+      setSuccessMessage('');  // Ukloni poruku uspjeha
+    }
+  };
+
+  return (
+    <div>
+      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <div className="flex flex-col gap-1">
+          <p>Ihr Name</p>
+          <input
+            placeholder="Vorname Nachname"
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
+            required
+          />
+        </div>
+        <div className="flex flex-col gap-1">
+          <p>Ihre Telefonnummer</p>
+          <input
+            placeholder="+112233445566"
+            type="text"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
+            required
+          />
+        </div>
+        <div className="flex flex-col gap-1">
+          <p>Ihre E-mail</p>
+          <input
+            placeholder="vorname@beispiel.com"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
+            required
+          />
+        </div>
+        <div className="flex flex-col gap-1">
+          <p>Ihre Nachricht</p>
+          <textarea
+            rows={5}
+            maxLength={500}
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4] resize-none"
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-1/2 relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-[#a3a3a3] rounded-full shadow-md group"
+        >
+          <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#a3a3a3] group-hover:translate-x-0 ease">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              ></path>
+            </svg>
+          </span>
+          <span className="absolute flex items-center justify-center w-full h-full text-[#a3a3a3] transition-all duration-300 transform group-hover:translate-x-full ease">
+            Nachricht senden
+          </span>
+          <span className="relative invisible">Nachricht senden</span>
+        </button>
+      </form>
+
+      {/* Display success or error messages */}
+      {errorMessage && (
+        <p className="text-red-500 poppins-medium mt-2">{errorMessage}</p>
+      )}
+      {successMessage && (
+        <p className="text-green-500 poppins-medium mt-2">{successMessage}</p>
+      )}
     </div>
   );
 }
 
-const FormComp = () => {
-  return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-1">
-        <p>Ihr Name</p>
-        <input
-          placeholder="Vorname Nachname"
-          type="text"
-          name="text"
-          className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
-        />
-      </div>
-      <div className="flex flex-col gap-1">
-        <p>Ihre Telefonnummer</p>
-        <input
-          placeholder="+112233445566"
-          type="text"
-          name="text"
-          className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
-        />
-      </div>
-      <div className="flex flex-col gap-1">
-        <p>Ihre E-mail</p>
-        <input
-          placeholder="vorname@beispiel.com"
-          type="text"
-          name="text"
-          className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4]"
-        />
-      </div>
-      <div className="flex flex-col gap-1">
-        <p>Ihre Nachricht</p>
-        <textarea
-          rows={5}
-          maxLength={500}
-          className="input border-2 px-4 py-2 rounded-3xl bg-[#F4F4F4] resize-none"
-        />
-      </div>
 
-      <a
-        href="#_"
-        class="w-1/2 relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-[#a3a3a3] rounded-full shadow-md group"
-      >
-        <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#a3a3a3] group-hover:translate-x-0 ease">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            ></path>
-          </svg>
-        </span>
-        <span class="absolute flex items-center justify-center w-full h-full text-[#a3a3a3] transition-all duration-300 transform group-hover:translate-x-full ease">
-          Nachricht senden
-        </span>
-        <span class="relative invisible">Nachricht senden</span>
-      </a>
-    </div>
-  );
-};

@@ -9,7 +9,7 @@ import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 export default function Reviews() {
   return (
     <div className="w-full bg-[url('/reviewBackground.png')] bg-stretch bg-no-repeat bg-center bg-opacity-65 flex flex-col items-center justify-center py-16">
-      <h1 className="text-4xl font-semibold">Reviews</h1>
+      <h1 className="text-4xl font-semibold poppins-bold">Reviews</h1>
       <Carousel
         showArrows={false}
         showThumbs={false}

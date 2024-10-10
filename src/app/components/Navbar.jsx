@@ -57,10 +57,10 @@ const Navbar = () => {
             viewport={{ once: true, amount: 0.1 }}
             className="group relative text-2xl font-semibold text-white/50 hover:text-white hover:cursor-pointer transition-all"
           >
-            <Link className="relative" href="#home">
+            <Link className="relative poppins-semibold" href="#home">
               Home
               <span
-                className="
+                className="poppins-semibold
         block h-0.5 bg-white absolute left-0 bottom-0 
         w-0 transition-all duration-300 ease-out group-hover:w-full
       "
@@ -75,7 +75,7 @@ const Navbar = () => {
             viewport={{ once: true, amount: 0.1 }}
             className="group relative text-2xl font-semibold text-white/50 hover:text-white hover:cursor-pointer transition-all"
           >
-            <Link className="relative" href="#services">
+            <Link className="relative poppins-semibold" href="#services">
               Services
               <span
                 className="
@@ -101,7 +101,7 @@ const Navbar = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, delay: 0.2 }}
           className="group relative text-2xl font-semibold text-white/50 hover:text-white hover:cursor-pointer transition-all">
-            <Link className="relative" href="#pricing">
+            <Link className="relative poppins-semibold" href="#pricing">
               Pricing
               <span
                 className="
@@ -116,7 +116,7 @@ const Navbar = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, delay: 0 }}
             viewport={{ once: true, amount: 0.1 }} className="group relative text-2xl font-semibold text-white/50 hover:text-white hover:cursor-pointer transition-all">
-            <Link className="relative" href="#contact">
+            <Link className="relative poppins-semibold" href="#contact">
               Contact
               <span
                 className="

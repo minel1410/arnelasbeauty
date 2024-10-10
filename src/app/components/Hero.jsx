@@ -24,7 +24,7 @@ export default function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, delay: 0.7 }}
               viewport={{ once: true, amount: 0.1 }}
-              className="font-sf-mono text-gray-500 text-md md:text-xl"
+              className="poppins-semibold text-gray-500 text-md md:text-xl"
             >
               Willkommen bei
             </motion.h4>
@@ -34,7 +34,7 @@ export default function Hero() {
               transition={{ duration: 0.2, delay: 0.795 }}
               viewport={{ once: true, amount: 0.1 }}
               className="
-          font-calibre text-white text-4xl font-extrabold mt-4
+          poppins-black text-white text-4xl font-extrabold mt-4
           md:text-7xl
           "
             >
@@ -46,7 +46,7 @@ export default function Hero() {
               transition={{ duration: 0.2, delay: 0.835 }}
               viewport={{ once: true, amount: 0.1 }}
               className="
-          italic mt-4 text-[#aca8a8] font-bold text-3xl
+          poppins-semibold-italic mt-4 text-[#aca8a8] font-bold text-3xl
           md:text-5xl
 
           "
@@ -59,7 +59,7 @@ export default function Hero() {
               transition={{ duration: 0.2, delay: 0.955 }}
               viewport={{ once: true, amount: 0.1 }}
               className="
-          font-calibre text-Slate text-lg mt-5
+          poppins-medium text-Slate text-lg mt-5
           sm:text-lg md:text-xl xl:w-5/6"
             >
               In unserem Studio steht Ihre natürliche Schönheit im Mittelpunkt.

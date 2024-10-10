@@ -10,8 +10,8 @@ const Card = ({image, head, desc, b_price, t_price}) => {
     <div className="card1 w-full h-80 lg:h-1/2 rounded-2xl hover:cursor-default">
       <div className="w-full h-full flex flex-col justify-center">
         <img src={image} className="w-28 h-28 mb-8 text-pink-600" />
-        <h3>{head} </h3>
-        <p class="small pb-5">{desc}</p>
+        <h3 className="poppins-black">{head} </h3>
+        <p class="small pb-5 poppins-medium">{desc}</p>
         <p className="text-white">{b_price}€ - {t_price}€</p>
       </div>
       <div class="go-corner" href="#">
@@ -28,10 +28,10 @@ export default function Services() {
       className="w-full bg-Pink flex flex-col lg:flex-row lg:gap-8 px-4 lg:px-48 py-16 border"
     >
       <div className="w-full lg:w-5/12 flex flex-col justify-center gap-8">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl lg:w-5/6 font-semibold">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl lg:w-5/6 poppins-semibold">
           Unsere Dienstleistungen
         </h1>
-        <p className="lg:w-5/6 text-lg">
+        <p className="lg:w-5/6 text-lg poppins-medium">
           Wir bieten eine Vielzahl an Dienstleistungen, um Ihre natürliche
           Schönheit zu betonen. Mit hochwertigen Produkten und den neuesten
           Techniken erzielen wir optimale Ergebnisse. Egal ob perfekt geformte
