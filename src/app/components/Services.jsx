@@ -27,46 +27,74 @@ export default function Services() {
       id="services"
       className="w-full bg-Pink flex flex-col lg:flex-row lg:gap-8 px-4 lg:px-48 py-16 border"
     >
-      <div className="w-full lg:w-5/12 flex flex-col justify-center gap-8">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl lg:w-5/6 poppins-semibold">
+      <motion.div
+        className="w-full lg:w-5/12 flex flex-col justify-center gap-8"
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        <motion.h1
+          className="text-5xl md:text-6xl lg:text-7xl lg:w-5/6 poppins-semibold"
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
+        >
           Unsere Dienstleistungen
-        </h1>
-        <p className="lg:w-5/6 text-lg poppins-medium">
+        </motion.h1>
+        <motion.p
+          className="lg:w-5/6 text-lg poppins-medium"
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
+        >
           Wir bieten eine Vielzahl an Dienstleistungen, um Ihre natürliche
           Schönheit zu betonen. Mit hochwertigen Produkten und den neuesten
           Techniken erzielen wir optimale Ergebnisse. Egal ob perfekt geformte
           Augenbrauen, lange und voluminöse Wimpern oder luxuriöses Make-up –
           unsere Dienstleistungen werden Ihre Wünsche erfüllen und Sie erfrischt
           und schön fühlen lassen.
-        </p>
-        <a
+        </motion.p>
+        <motion.a
           href="#contact"
-          class="w-1/2 relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-[#a0867d] rounded-full shadow-md group"
+          className="w-1/2 relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-[#a0867d] rounded-full shadow-md group"
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
-          <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#a0867d] group-hover:translate-x-0 ease">
+          <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#a0867d] group-hover:translate-x-0 ease">
             <svg
-              class="w-6 h-6"
+              className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M14 5l7 7m0 0l-7 7m7-7H3"
               ></path>
             </svg>
           </span>
-          <span class="absolute flex items-center justify-center w-full h-full text-[#a0867d] transition-all duration-300 transform group-hover:translate-x-full ease">
+          <span className="absolute flex items-center justify-center w-full h-full text-[#a0867d] transition-all duration-300 transform group-hover:translate-x-full ease">
             Book an appointment
           </span>
-          <span class="relative invisible">Book an appointment</span>
-        </a>
-      </div>
+          <span className="relative invisible">Book an appointment</span>
+        </motion.a>
+      </motion.div>
 
-      <div className="w-full lg:w-6/12 flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:gap-12 mt-4 lg:mt-0">
+      <motion.div
+        className="w-full lg:w-6/12 flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:gap-12 mt-4 lg:mt-0"
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.5 }}
+        viewport={{ once: true, amount: 0.1 }}
+      >
         <div className="flex flex-col gap-8">
           <Card
             image="/eyelashes.png"
@@ -92,7 +120,7 @@ export default function Services() {
           <Card
             image="/microblading.png"
             head="Puder Augenbrauen"
-            desc=" Für einen sanften und natürlichen Augenbrauenlook. Perfekte Schattierung"
+            desc=" Für einen sanften und natürlichen Augenbrauenlook. Perfekte Schattierung."
             b_price={200}
             t_price={350}
           />
@@ -120,7 +148,7 @@ export default function Services() {
             t_price={100}
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 
