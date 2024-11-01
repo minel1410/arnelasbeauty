@@ -5,42 +5,70 @@ import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteRight } from "@fortawesome/free-solid-svg-icons"; 
+import { motion } from "framer-motion";
 
 export default function Reviews() {
   return (
     <div className="w-full bg-[url('/reviewBackground.png')] bg-stretch bg-no-repeat bg-center bg-opacity-65 flex flex-col items-center justify-center py-16">
-      <h1 className="text-4xl font-semibold poppins-bold">Reviews</h1>
-      <Carousel
-        showArrows={false}
-        showThumbs={false}
-        showStatus={false}
-        showIndicators
-        autoPlay
-        infiniteLoop
-        stopOnHover
-        swipeable
-        useKeyboardArrows
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-4xl font-semibold poppins-bold"
+      >
+        Reviews
+      </motion.h1>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
         className="w-full"
       >
-        <SingleReview
-          img="D"
-          name="Dejana"
-          content="Für mich ist dieses Studio das beste, wenn es um die Augen geht.
-              Super sauber, hygienisch und freundlich. Es erfüllt vollkommen die
-              Wünsche seiner Kunden. Es ist immer eine Freude für mich!"
-        />
-        <SingleReview
-          img="A"
-          name="Andre Szabo"
-          content="Der Salon ist schön, sauber und das Personal ist angenehm. Ich verlasse ihn immer zufrieden."
-        />
-        <SingleReview img="P" name="P Jung" content="👍👍" />
-        <SingleReview
-          img="A"
-          name="Amela"
-          content="Genauigkeit, Sauberkeit, Qualität, Professionalität und Wert sind die Grundpfeiler unseres Services."
-        />
-      </Carousel>
+        <Carousel
+          showArrows={false}
+          showThumbs={false}
+          showStatus={false}
+          showIndicators
+          autoPlay
+          infiniteLoop
+          stopOnHover
+          swipeable
+          useKeyboardArrows
+        >
+          {[
+            {
+              img: "D",
+              name: "Dejana",
+              content: "Für mich ist dieses Studio das beste...",
+            },
+            {
+              img: "A",
+              name: "Andre Szabo",
+              content: "Der Salon ist schön, sauber und...",
+            },
+            { img: "P", name: "P Jung", content: "👍👍" },
+            {
+              img: "A",
+              name: "Amela",
+              content: "Genauigkeit, Sauberkeit, Qualität...",
+            },
+          ].map((review, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 + index * 0.2 }}
+            >
+              <SingleReview
+                img={review.img}
+                name={review.name}
+                content={review.content}
+              />
+            </motion.div>
+          ))}
+        </Carousel>
+      </motion.div>
     </div>
   );
 }
