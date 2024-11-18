@@ -111,7 +111,7 @@ export default function Footer() {
                 strokeWidth={3}
                 className="w-6 h-6 text-Pink"
               />
-              <p className="text-[#a3a3a3] poppins-medium">+1 (234) 567–8901</p>
+              <p className="text-[#a3a3a3] poppins-medium">+4917624081030</p>
             </div>
             <div className="flex w-full gap-5">
               <FeatherIcon

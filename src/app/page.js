@@ -18,7 +18,6 @@ export default function Home() {
       <Reviews />
       <Pricing />
       <ContactMapSection />
-      <Footer />
     </>
   );
 }

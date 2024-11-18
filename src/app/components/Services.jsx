@@ -82,9 +82,9 @@ export default function Services() {
             </svg>
           </span>
           <span className="absolute flex items-center justify-center w-full h-full text-[#a0867d] transition-all duration-300 transform group-hover:translate-x-full ease">
-            Book an appointment
+            Einen Termin buchen
           </span>
-          <span className="relative invisible">Book an appointment</span>
+          <span className="relative invisible">Einen Termin buchen</span>
         </motion.a>
       </motion.div>
 
@@ -106,7 +106,7 @@ export default function Services() {
           <Card
             image="/lashes_fill.png"
             head="Wimpern Auffüllen"
-            desc="Halten Sie Ihre Wimpern frisch. Auffüllservice nach 3 oder 4 Wochen."
+            desc="Halten Sie Ihre Wimpern frisch. Auffüllservice innerhalb 3 oder 4 Wochen."
             b_price={40}
             t_price={70}
           />

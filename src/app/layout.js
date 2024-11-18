@@ -99,7 +99,7 @@ const RootLayout = ({ children }) => {
             description: metadata.description,
             image: metadata.openGraph.images[0].url,
             url: metadata.openGraph.url,
-            telephone: "+49 123 4567890", // Update with actual phone number
+            telephone: "+4917624081030", // Update with actual phone number
             address: {
               "@type": "PostalAddress",
               streetAddress: "Ritterstraße 28",

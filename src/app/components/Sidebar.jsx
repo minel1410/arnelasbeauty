@@ -69,31 +69,43 @@ const Sidebar = ({ active }) => {
         }}
         aria-hidden={!active} // Hides the sidebar from screen readers when inactive
       >
-        <div className="w-1/4 sm:w-1/2 bg-Pink/30 backdrop-blur-md"></div>
+        <div className="w-1/4 sm:w-1/2 bg-Pink/30 backdrop-blur-md" onClick={() => active = false}></div>
         <nav className="w-3/4 sm:w-1/2 bg-Pink z-30 h-full flex justify-center items-center">
           <ul className="w-full flex flex-col gap-3">
             <li className="w-full flex justify-center h-24"></li>
             <li>
               <Link
                 href="#aboutme"
-                aria-label="About me section"
+                aria-label="Home section"
                 className="w-full p-3 flex flex-col items-center justify-center group"
               >
                 <p className="font-sf-mono text-Green text-lg">01.</p>
                 <p className="font-calibre text-Slate text-2xl group-hover:text-Green transition-all">
-                  About
+                  Home
                 </p>
               </Link>
             </li>
             <li>
               <Link
-                href="#projects"
-                aria-label="Projects section"
+                href="#services"
+                aria-label="Services section"
                 className="w-full p-3 flex flex-col items-center justify-center group"
               >
                 <p className="font-sf-mono text-Green text-lg">02.</p>
                 <p className="font-calibre text-Slate text-2xl group-hover:text-Green transition-all">
-                  Projects
+                  Services
+                </p>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#pricing"
+                aria-label="Pricing section"
+                className="w-full p-3 flex flex-col items-center justify-center group"
+              >
+                <p className="font-sf-mono text-Green text-lg">03.</p>
+                <p className="font-calibre text-Slate text-2xl group-hover:text-Green transition-all">
+                  Pricing
                 </p>
               </Link>
             </li>
